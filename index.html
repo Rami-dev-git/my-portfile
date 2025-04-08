@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="estilos.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    
+
 </head>
 
 <nav>
@@ -22,6 +24,8 @@
 </nav>
 
 <body>
+
+<button id="toggleMode">🌙</button>
 
 <header id="Inicio">
     <img src="imagenperfil.jpg" alt="Foto de perfil" class="foto-perfil">
@@ -56,15 +60,6 @@
     </ul>
 </section>
 
-
-
-<section id="Contacto">
-    <h2> Contacto </h2>
-    <p> Podes escribime a: <a href="ramirojcubria2000@gmail.com"> ramirojcubria2000@gmail.com </a></p>
-    <p> Mi telefono de contacto: 3564 - 331612 </p>
-</section>
-
-
 <section id="Redes">
     <h2> Redes sociales </h2>
     <ul>
@@ -73,6 +68,59 @@
         
     </ul>
 </section>
+
+<section id="Contacto">
+    <h2> Contacto </h2>
+    <form action="https://formspree.io/f/mkgjpdbe" method="POST">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" required>
+    
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+    
+        <label for="mensaje">Mensaje:</label>
+        <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
+    
+        <button type="submit">Enviar</button>
+    </form>
+</section>
+
+<script src="script.js"></script>
+<button id="btn-volver-arriba">↑</button>
+<script>
+    const btnVolverArriba = document.getElementById("btn-volver-arriba");
+
+    window.addEventListener("scroll", () => {
+    if (window.scrollY > 300) {
+        btnVolverArriba.style.display = "block";
+    } else {
+        btnVolverArriba.style.display = "none";
+    }
+    });
+
+    btnVolverArriba.addEventListener("click", () => {
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+    });
+</script>
+
+<a href="https://wa.me/5493564331612" class="whatsapp-float" target="_blank" title="Chatear por WhatsApp">
+    <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp" width="50" height="50">
+</a>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const toggleButton = document.getElementById('toggleMode');
+
+        toggleButton.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+
+            toggleButton.textContent = document.body.classList.contains('dark-mode') ? '☀️' : '🌙';
+        });
+    });
+</script>
 
 </body>
 </html>
