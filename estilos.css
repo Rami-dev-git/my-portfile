@@ -2,6 +2,47 @@ html {
     scroll-behavior: smooth;
 }
 
+@keyframes deslizarYaparecer {
+from {
+    opacity: 0;
+    transform: translateY(-30px);
+}
+to {
+    opacity: 1;
+    transform: translateY(0);
+}
+}
+
+@keyframes aparecer {
+    from {
+    opacity: 0;
+    transform: translateY(20px);
+    }
+    to {
+    opacity: 1;
+    transform: translateY(0);
+    }
+}
+
+p {
+    animation: aparecer 1s ease;
+}
+
+li:nth-child(1) {
+    animation: aparecer 0.6s ease forwards;
+    animation-delay: 0.2s;
+}
+
+li:nth-child(2) {
+    animation: aparecer 0.6s ease forwards;
+    animation-delay: 0.4s;
+}
+
+li:nth-child(3) {
+    animation: aparecer 0.6s ease forwards;
+    animation-delay: 0.6s;
+}
+
 nav {
     background-color: #0a9396;
     padding: 10px 0;
@@ -31,7 +72,7 @@ nav a:hover {
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'PT Serif', sans-serif;
     background-color: #f9f9f9;
     color: #333;
     margin: 0;
@@ -44,14 +85,35 @@ header {
     color: white;
     padding: 20px;
     text-align: center;
+    animation: deslizarYaparecer 1s ease;
+}
+
+.foto-perfil {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+    display: block;
+    margin: 0 auto; 
+    position: relative;
+    z-index: 10;
+}
+
+.foto-perfil:hover {
+    transform: scale(1.2);
+    z-index: 9999;
 }
 
 section{
     padding: 20px;
+    
 }
 
-h1 h2 h3 {
+h1 h2 h3 h4 {
     margin-bottom: 10px;
+    
 }
 
 ul {
@@ -66,6 +128,12 @@ li {
     border-radius: 5px;
 }
 
+p {
+    background-color: #e0fbfc;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
 header img {
     border-radius: 50%;
     display: block;
@@ -83,5 +151,10 @@ header img {
     text-decoration: none;
     color: #0077b6;
     font-weight: bold;
+}
+
+#redes i {
+    margin-right: 8px;
+    color: #0a9396;
 }
 
